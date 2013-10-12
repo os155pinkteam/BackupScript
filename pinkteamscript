@@ -7,5 +7,5 @@ tar -cvpzf backup.tar.gz $files
 echo "Your Files and Directories in your computer has been already Backed-Up"
 
 
-
+# See README for crontab 
 # PINK TEAM
