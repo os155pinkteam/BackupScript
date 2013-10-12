@@ -1,16 +1,11 @@
 #!/bin/bash
 
-files=$(find -user os155 -not -path './.*' -not -name '.*' -mmin -60)
+files=$(find -user os155 -not -path './.*' -not -name '.*' -mmin -60|sudo find / -not -path '/proc*' -not -name '.*' -mmin -60)
 tar -cvpzf backup.tar.gz $files
 
 
-echo "Your Files and Directories has been already Backed-Up"
-
-# m h  dom mon dow   command
+echo "Your Files and Directories in your computer has been already Backed-Up"
 
 
-# 5 *  *   *   *    /home/os155/pinkteamscript
-
-# NOTE:script file must be in executable mode e.g (chmod +x pinkteamscript)
 
 # PINK TEAM
