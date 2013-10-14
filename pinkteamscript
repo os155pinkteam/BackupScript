@@ -1,6 +1,6 @@
 #!/bin/bash
 tar -cf backup.tar pinkteamscript
-file=$(find /home -user ubuntu ! -path '/proc*' ! -name '.*' -mmin -60)
+file=$(find /home -user os155 ! -path '/proc*' ! -name '.*' -mmin -60)
 for i in $file 
 do
    echo $i
