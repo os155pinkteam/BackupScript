@@ -1,7 +1,7 @@
 #!/bin/bash
 
-files=$(find -user os155 -not -path './.*' -not -name '.*' -mmin -60|sudo find / -not -path '/proc*' -not -name '.*' -mmin -60)
-tar -cvpzf backup.tar.gz $files
+files=$(sudo find / -user os155 ! -path '/proc*' ! -name '.*' -mmin -60)
+tar -cvpzf backup.tar.gz --exclude=tmp $files
 
 
 echo "Your Files and Directories in your computer has been already Backed-Up"
