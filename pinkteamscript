@@ -1,10 +1,19 @@
 #!/bin/bash
+tar -cf backup.tar pinkteamscript
+file=$(find /home -user ubuntu ! -path '/proc*' ! -name '.*' -mmin -60)
+for i in $file 
+do
+   echo $i
+   a=$(ls -l $i|grep 'ubuntu'|awk -F ' ' '{print$3}') 
+   if [[ $a == 'ubuntu' ]];
+    then
+      echo $i
+      tar -rf backup.tar $i
+    
+   fi
+done
 
-files=$(sudo find / -user os155 ! -path '/proc*' ! -name '.*' -mmin -60)
-tar -cvpzf backup.tar.gz --exclude=tmp $files
-
-
-echo "Your Files and Directories in your computer has been already Backed-Up"
+echo "Your Files and Directories has been Backed-Up"
 
 
 # See README for crontab 
